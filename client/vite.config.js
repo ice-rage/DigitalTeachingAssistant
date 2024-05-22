@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import Layouts from "vite-plugin-vue-layouts";
 import VueRouter from "unplugin-vue-router/vite";
 import { VueRouterAutoImports } from "unplugin-vue-router";
 
@@ -54,6 +55,7 @@ export default defineConfig({
       ],
     }),
     vue(),
+    Layouts(),
   ],
   resolve: {
     alias: {
