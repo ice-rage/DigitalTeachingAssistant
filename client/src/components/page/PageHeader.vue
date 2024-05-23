@@ -104,7 +104,6 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
-      // margin: 0 auto;
 
       @media @bw1020 {
         position: absolute;
@@ -136,7 +135,6 @@
       margin: 0 15px;
       color: @deep_purple;
       font-weight: 600;
-      font-size: 18px;
       transition: color 0.2s;
 
       @media @bw1020 {
