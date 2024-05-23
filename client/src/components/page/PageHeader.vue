@@ -10,31 +10,30 @@
       </a>
 
       <nav class="page-header__nav">
+        <a href="#" class="page-header__nav-link">Преподаватели</a>
+        <a href="#" class="page-header__nav-link">Пользователи</a>
+
         <div class="page-header__nav-user">
           <a href="#" class="page-header__nav-user-link">
-            Имя пользователя
+            Ахроменко Дарья Сергеевна
           </a>
 
           <a href="#" class="page-header__nav-logout">
-            <!-- иконка -->
+            <v-icon 
+              :icon="mdiLogout" 
+              class="page-header__logout-icon">
+            </v-icon>
           </a>
         </div>
-
-      </nav>
-      
-      <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn">Войти
-          <!-- иконка -->
-        </a>
-
+        
         <v-btn type="button" class="page-header__nav-toggle"></v-btn>
-      </div>
+      </nav>
     </div>
   </header>
 </template>
 
 <script setup>
-  import { mdiSchool } from "@mdi/js";
+  import { mdiSchool, mdiLogout } from "@mdi/js";
 </script>
 
 <style lang="less">
@@ -63,6 +62,7 @@
 
       position: relative;
       display: flex;
+      justify-content: space-between;
       padding: 0;
     }
     
@@ -74,6 +74,10 @@
       padding: 0 20px;
       background-color: @light_steel_blue;
       color: @deep_purple;
+
+      @media @bw1340 {
+        max-width: 300px;
+      }
     }
     
     &__logo-icon {
@@ -90,14 +94,17 @@
 
     &__logo-text {
       margin-left: 15px;
-      font-family: @font1;
+
+      @media @bw650 {
+        display: none;
+      }
     }
     
     &__nav {
       box-sizing: border-box;
       display: flex;
-      align-items: baseline;
-      margin: 0 auto;
+      align-items: center;
+      // margin: 0 auto;
 
       @media @bw1020 {
         position: absolute;
@@ -126,8 +133,8 @@
     }
     
     &__nav-link {
-      margin: 0 25px;
-      color: @black;
+      margin: 0 15px;
+      color: @deep_purple;
       font-weight: 600;
       font-size: 18px;
       transition: color 0.2s;
@@ -137,33 +144,45 @@
         font-size: 16px;
       }
 
-      // &:hover {
-      //   @media(hover: hover) {
-      //     color: @red_BC;
-      //   }
-      // }
+      &:hover {
+        @media(hover: hover) {
+          color: @dark_orchid;
+        }
+      }
     }
 
     &__nav-user {
-      display: none;
+      display: flex;
+      align-items: center;
+      margin-left: 90px;
 
-      @media @bw1020 {
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
+      @media @bw1660 {
+        margin-left: 70px;
+      }
+
+      @media @bw1340 {
+        margin-left: 50px;
       }
     }
 
     &__nav-user-link {
       margin-right: 25px;
-      font-weight: 400;
+      color: @deep_purple;
+      font-weight: 600;
       font-size: 16px;
     }
 
     &__nav-logout {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       font-size: 0;
+      margin-right: 20px;
+    }
+
+    &__logout-icon {
+      width: 100%;
+      height: 100%;
+      color: @deep_purple;
     }
 
     &__right-block {
@@ -172,49 +191,13 @@
       align-items: center;
       width: 202px;
 
-      @media @bw1660 {
-        width: 152px;
-      }
+      // @media @bw1660 {
+      //   width: 152px;
+      // }
 
       @media @bw1020 {
         width: auto;
         margin-left: auto;
-      }
-    }
-
-    &__user-btn {
-      box-sizing: border-box;
-      display: inline-block;
-      padding: 15px 20px;
-      outline: none;
-      background-color: transparent;
-      color: @deep_purple;
-      font-family: @font1;
-      font-weight: 600;
-      font-size: 16px;
-      text-align: center;
-      transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-      overflow: hidden;
-
-      @media @bw1020 {
-        display: flex;
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        border: 0;
-        background: none;
-        color: @black;
-        font-size: 0;
-      }
-
-      &:hover {
-        @media(hover: hover) {
-          background-color: @light_steel_blue;
-
-          @media @bw1020 {
-            background-color: transparent;
-          }
-        }
       }
     }
 

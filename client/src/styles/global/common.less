@@ -10,12 +10,16 @@ body {
 
 body {
   color: @black;
-  @font-family: @font1;
+  font-family: @font1;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.362;
   overflow-x: hidden;
+
+  @media @bw768 {
+    font-size: 14px;
+  }
 }
 
 a {

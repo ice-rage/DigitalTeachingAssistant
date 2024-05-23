@@ -15,7 +15,8 @@
       </div>
 
       <div class="page-footer__copyright">
-        © Digital Teaching Assistant 2024
+        © Digital Teaching Assistant 
+        <span class="page-footer__copyright-year">2024</span>
       </div>
     </div>
   </footer>
@@ -41,6 +42,7 @@
     &__contacts {
       display: flex;
       flex-direction: column;
+      margin-right: 20px;
     }
 
     &__contacts-title {
@@ -65,7 +67,10 @@
     }
 
     &__copyright {
-
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: right;
     }
   }
 </style>
