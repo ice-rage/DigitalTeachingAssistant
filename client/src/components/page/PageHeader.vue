@@ -10,12 +10,15 @@
       </a>
 
       <nav class="page-header__nav">
-        <a href="#" class="page-header__nav-link">Преподаватели</a>
         <a href="#" class="page-header__nav-link">Пользователи</a>
-
+        <a href="#" class="page-header__nav-link">Преподаватели</a>
+        
         <div class="page-header__nav-user">
-          <a href="#" class="page-header__nav-user-link">
-            Ахроменко Дарья Сергеевна
+          <a href="#" class="page-header__user-btn">
+            <v-icon 
+              :icon="mdiAccountCircle" 
+              class="page-header__user-icon"
+            ></v-icon>
           </a>
 
           <a href="#" class="page-header__nav-logout">
@@ -33,7 +36,7 @@
 </template>
 
 <script setup>
-  import { mdiSchool, mdiLogout } from "@mdi/js";
+  import { mdiSchool, mdiAccountCircle, mdiLogout } from "@mdi/js";
 </script>
 
 <style lang="less">
@@ -45,8 +48,8 @@
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    height: 60px;
-    background-color: @lavender;
+    height: 124px;
+    background-color: @deep_purple_90;
     z-index: 100;
 
     @media @bw1340 {
@@ -71,9 +74,10 @@
       justify-content: left;
       align-items: center;
       flex-wrap: nowrap;
-      padding: 0 20px;
-      background-color: @light_steel_blue;
-      color: @deep_purple;
+      max-width: 475px;
+      padding-left: 25px;
+      background-color: @deep_purple;
+      color: @white;
 
       @media @bw1340 {
         max-width: 300px;
@@ -82,8 +86,8 @@
     
     &__logo-icon {
       flex-shrink: 0;
-      width: 32px;
-      height: 32px;
+      width: 75px;
+      height: 68px;
       font-size: 0;
 
       @media @bw1020 {
@@ -93,7 +97,10 @@
     }
 
     &__logo-text {
-      margin-left: 15px;
+      font-family: @font2;
+      font-weight: 400;
+      font-size: 30px;
+      margin-left: 35px;
 
       @media @bw650 {
         display: none;
@@ -132,10 +139,14 @@
     }
     
     &__nav-link {
-      margin: 0 15px;
-      color: @deep_purple;
-      font-weight: 600;
-      transition: color 0.2s;
+      border-radius: 13px;
+      margin: 0 21px;
+      padding: 19px 49px;
+      background-color: @dark_orchid_40;
+      color: @white;
+      font-family: @font2;
+      font-weight: 400;
+      transition: background-color 0.2s;
 
       @media @bw1020 {
         margin: 0 0 40px;
@@ -144,15 +155,17 @@
 
       &:hover {
         @media(hover: hover) {
-          color: @dark_orchid;
+          background-color: @dark_orchid;
         }
       }
     }
 
     &__nav-user {
       display: flex;
+      justify-content: stretch;
       align-items: center;
-      margin-left: 90px;
+      gap: 36px;
+      margin: 0 35px 0 93px;
 
       @media @bw1660 {
         margin-left: 70px;
@@ -166,21 +179,22 @@
     &__nav-user-link {
       margin-right: 25px;
       color: @deep_purple;
+      font-family: @font2;
       font-weight: 600;
       font-size: 16px;
     }
 
     &__nav-logout {
-      width: 32px;
-      height: 32px;
+      display: block;
+      width: 76px;
+      height: 63px;
       font-size: 0;
-      margin-right: 20px;
+      z-index: 1;
     }
 
     &__logout-icon {
       width: 100%;
       height: 100%;
-      color: @deep_purple;
     }
 
     &__right-block {
@@ -189,10 +203,6 @@
       align-items: center;
       width: 202px;
 
-      // @media @bw1660 {
-      //   width: 152px;
-      // }
-
       @media @bw1020 {
         width: auto;
         margin-left: auto;
@@ -200,13 +210,11 @@
     }
 
     &__user-icon {
-      display: none;
-
-      @media @bw1020 {
-        display: block;
-        margin: auto;
-        z-index: 1;
-      }
+      display: block;
+      width: 68px;
+      height: 63px;
+      margin: auto;
+      z-index: 1;
     }
 
     &__nav-toggle {

@@ -1,5 +1,6 @@
 /* Цветовая палитра */
 @black: #000;
+@black_25: fade(@black, 25%);
 @white: #fff;
 @lavender: #ececf4;
 @light_blue: #e8f0fe;
@@ -7,11 +8,14 @@
 @gray: fade(@black, 60%);
 @light_gray: #d1d4d3;
 @deep_purple: #3c388d;
+@deep_purple_90: fade(@deep_purple, 90%);
 @dark_orchid: #9535C0;
+@dark_orchid_40: fade(@dark_orchid, 40%);
+@yellow_green: #9FC439;
 
 /* Шрифты */
-@font1: "Open Sans", "sans-serif";
-@font2: "Lora", "sans-serif";
+@font1: "Inter", "sans-serif";
+@font2: "Open Sans", "sans-serif";
 
 /* Медиавыражения */
 @bw400: ~"(max-width: 399px)";
@@ -58,3 +62,6 @@
 
 @bw1660: ~"(max-width: 1659px)";
 @w1660: ~"(min-width: 1660px)";
+
+/* Тени */
+@shadow_main: 0 4px 4px 0 @black_25;

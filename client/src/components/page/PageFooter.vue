@@ -4,13 +4,13 @@
       <div class="page-footer__contacts">
         <h4 class="page-footer__contacts-title">Наши контакты:</h4>
         <a href="tel:74993485321" class="page-footer__contacts-data">
-          +7 499 348 53 21
+          +79132823723
         </a>
         <a 
-          href="mailto:contacts@digital-teaching-assistant.ru" 
+          href="mailto:hackaton2024@gmail.com" 
           class="page-footer__contacts-data"
         >
-          contacts@digital-teaching-assistant.ru
+          hackaton2024@gmail.com
         </a>
       </div>
 
@@ -27,8 +27,8 @@
 <style lang="less">
   .page-footer {
     flex: 0 0 auto;
-    padding: 30px 0;
-    background-color: @deep_purple;
+    padding: 20px 0 15px;
+    background-color: @deep_purple_90;
     color: @white;
 
     &__container {
@@ -45,31 +45,18 @@
       margin-right: 20px;
     }
 
-    &__contacts-title {
-      margin-bottom: 10px;
-
-      @media @bw768 {
-        margin-bottom: 5px;
-      }
-    }
-
+    &__contacts-title,
     &__contacts-data {
-      display: flex;
-      margin-bottom: 5px;
-
-      @media @bw768 {
-        margin-bottom: 3px;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      font-weight: 500;
+      font-size: 22px;
     }
 
     &__copyright {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 7px;
+      font-family: @font2;
+      font-size: 22px;
       text-align: right;
     }
   }
