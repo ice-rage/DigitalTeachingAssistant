@@ -27,9 +27,19 @@
 <style lang="less">
   .page-footer {
     flex: 0 0 auto;
+    height: 124px;
     padding: 20px 0 15px;
     background-color: @deep_purple_90;
     color: @white;
+
+    @media @bw1340 {
+      padding: 10px 0;
+      height: 100px;
+    }
+
+    @media @bw450 {
+      font-size: 14px;
+    }
 
     &__container {
       .container();
@@ -42,13 +52,12 @@
     &__contacts {
       display: flex;
       flex-direction: column;
+      align-self: flex-start;
       margin-right: 20px;
-    }
 
-    &__contacts-title,
-    &__contacts-data {
-      font-weight: 500;
-      font-size: 22px;
+      @media @bw768 {
+        margin-right: 10px;
+      }
     }
 
     &__copyright {
@@ -56,7 +65,6 @@
       flex-direction: column;
       gap: 7px;
       font-family: @font2;
-      font-size: 22px;
       text-align: right;
     }
   }

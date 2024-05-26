@@ -53,11 +53,11 @@
     z-index: 100;
 
     @media @bw1340 {
-      height: 50px;
+      height: 100px;
     }
 
     @media @bw768 {
-      height: 40px;
+      height: 80px;
     }
     
     &__container {
@@ -66,7 +66,7 @@
       position: relative;
       display: flex;
       justify-content: space-between;
-      padding: 0;
+      padding-left: 0;
     }
     
     &__logo {
@@ -80,19 +80,33 @@
       color: @white;
 
       @media @bw1340 {
-        max-width: 300px;
+        max-width: 390px;
+      }
+
+      @media @bw768 {
+        width: 19.973%;
+        padding-left: 0;
       }
     }
     
     &__logo-icon {
-      flex-shrink: 0;
       width: 75px;
       height: 68px;
-      font-size: 0;
 
-      @media @bw1020 {
-        width: 24px;
-        height: 24px;
+      @media @bw1340 {
+        width: 65px;
+        height: 58px;
+      }
+
+      @media @bw768 {
+        width: 55px;
+        height: 48px;
+        margin: 0 auto;
+      }
+
+      @media @bw450 {
+        width: 45px;
+        height: 38px;
       }
     }
 
@@ -102,7 +116,12 @@
       font-size: 30px;
       margin-left: 35px;
 
-      @media @bw650 {
+      @media @bw1340 {
+        margin-left: 25px;
+        font-size: 22px;
+      }
+
+      @media @bw768 {
         display: none;
       }
     }
@@ -121,14 +140,14 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 211px 30px 30px;
-        background-color: fade(@light_gray, 98%);
+        background-color: fade(@deep_purple, 98%);
         transition: transform 0.4s;
         transform: translate(-100%);
         overflow-x: hidden;
         overflow-y: auto;
 
         @supports (backdrop-filter: blur(20px)) {
-          background-color: fade(@light_gray, 70%);
+          background-color: fade(@deep_purple, 70%);
           backdrop-filter: blur(20px);
         }
       }
@@ -148,6 +167,11 @@
       font-weight: 400;
       transition: background-color 0.2s;
 
+      @media @bw1340 {
+        margin: 0 15px;
+        padding: 15px 30px;
+      }
+
       @media @bw1020 {
         margin: 0 0 40px;
         font-size: 16px;
@@ -165,23 +189,51 @@
       justify-content: stretch;
       align-items: center;
       gap: 36px;
-      margin: 0 35px 0 93px;
+      margin-left: 93px;
 
       @media @bw1660 {
+        gap: 26px;
         margin-left: 70px;
       }
 
       @media @bw1340 {
+        gap: 16px;
         margin-left: 50px;
       }
     }
 
-    &__nav-user-link {
-      margin-right: 25px;
-      color: @deep_purple;
-      font-family: @font2;
-      font-weight: 600;
-      font-size: 16px;
+    &__user-btn {
+      display: block;
+      width: 68px;
+      height: 63px;
+      margin: auto;
+      z-index: 1;
+
+      @media @bw1340 {
+        width: 58px;
+        height: 53px;
+      }
+
+      @media @bw768 {
+        width: 48px;
+        height: 43px;
+      }
+    }
+
+    &__user-icon,
+    &__logout-icon {
+      transition: color 0.2s;
+
+      &:hover {
+        @media (hover: hover) {
+          color: @dark_orchid;
+        }
+      }
+    }
+
+    &__user-icon {
+      width: 100%;
+      height: 100%;
     }
 
     &__nav-logout {
@@ -190,31 +242,21 @@
       height: 63px;
       font-size: 0;
       z-index: 1;
+
+      @media @bw1340 {
+        width: 66px;
+        height: 53px;
+      }
+
+      @media @bw768 {
+        width: 56px;
+        height: 43px;
+      }
     }
 
     &__logout-icon {
       width: 100%;
       height: 100%;
-    }
-
-    &__right-block {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 202px;
-
-      @media @bw1020 {
-        width: auto;
-        margin-left: auto;
-      }
-    }
-
-    &__user-icon {
-      display: block;
-      width: 68px;
-      height: 63px;
-      margin: auto;
-      z-index: 1;
     }
 
     &__nav-toggle {
