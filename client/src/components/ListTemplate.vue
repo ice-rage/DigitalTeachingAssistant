@@ -4,6 +4,8 @@
       <h4 class="list-template__title">{{ title }}</h4>
     </div>
 
+    <v-btn class="list-template__add-btn">Добавить</v-btn>
+
     <section class="list-template__items">
       <v-card 
         v-for="item in currentItems"
@@ -32,8 +34,12 @@
         <v-card-actions>
           <v-btn
             class="ms-2"
+            :icon="mdiOpenInNew"
+          ></v-btn>
+          
+          <v-btn
+            class="ms-2"
             :icon="mdiSquareEditOutline"
-            variant="text"
           ></v-btn>
         </v-card-actions>
       </v-card>
@@ -56,7 +62,7 @@
 
 <script setup>
   import { onMounted } from "vue";
-  import { mdiSquareEditOutline } from "@mdi/js";
+  import { mdiOpenInNew, mdiSquareEditOutline } from "@mdi/js";
 
   const { title, items, } = defineProps({
     title: {
@@ -95,6 +101,10 @@
 
 <style lang="less">
   .list-template {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+
     &__title-wrapper {
       position: absolute;
       top: 124px;
@@ -139,8 +149,14 @@
       }
     }
 
-    &__items {
-      margin-top: 100px;
+    &__add-btn {
+      align-self: flex-end;
+      min-height: 45px;
+      padding: 6px 96px;
+      background-color: @yellow_green;
+      color: @white;
+      font-size: 22px;
+      text-transform: none;
     }
 
     &__item {
