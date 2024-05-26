@@ -1,176 +1,66 @@
 <template>
-  <v-form 
-    class="authorization-form" 
-    @submit.prevent="handleSubmit"
-  >
-    <h1 class="authorization-form__title">Вход в систему</h1>
-
-    <v-text-field 
-      v-model="form.username" 
-      label="E-mail" 
-      name="email"
-      color="primary"
-      density="comfortable"
-      single-line
-      clearable
-      :rules="[rules.required]"
-      class="authorization-form__input"
+  <div class="home">
+    <AutorizationForm v-if="isHidden" class="home__authorization-form"/>
+    <ListTemplate 
+      :title="'Пользователи'" 
+      :items="users" 
+      class="home__list-template"
     />
-
-    <v-text-field
-      v-model="form.password"
-      label="Пароль"
-      name="password"
-      type="password"
-      color="primary"
-      density="comfortable"
-      single-line
-      clearable
-      :rules="[rules.required]"
-      class="authorization-form__input"
-    />
-    <v-btn 
-      type="submit" 
-      variant="flat" 
-      class="authorization-form__submit-btn"
-    >
-      Войти
-    </v-btn>
-  </v-form>
+  </div>
 </template>
 
 <script setup>
-  const form = reactive({
-    username: "",
-    password: "",
-  });
+  import AutorizationForm from "@/components/AutorizationForm.vue";
+  import ListTemplate from "@/components/ListTemplate.vue";
 
-  const rules = {
-    required: value => !!value || "Это поле обязательно",
-  };
+  const isHidden = ref(false);
 
-  const handleSubmit = () => {
-    // здесь будет запрос к API 
-    console.log(form);
-  };
+  const users = [
+    {
+      id: "0001",
+      surname: "Максимов",
+      name: "Максим",
+      patronymic: "Максимович",
+      role: "Администратор",
+      photo: "/images/maksimov.jpg",
+    },
+    {
+      id: "0002",
+      surname: "Романов",
+      name: "Роман",
+      patronymic: "Романович",
+      role: "Пользователь",
+      photo: "/images/romanov.jpg",
+    },
+    {
+      id: "0003",
+      surname: "Олегов",
+      name: "Олег",
+      patronymic: "Олегович",
+      role: "Пользователь",
+      photo: "/images/olegov.jpg",
+    },
+    {
+      id: "0003",
+      surname: "Игорев",
+      name: "Игорь",
+      patronymic: "Игоревич",
+      role: "Администратор",
+      photo: "/images/igorev.jpg",
+    },
+    {
+      id: "0005",
+      surname: "Маринова",
+      name: "Марина",
+      patronymic: "Игоревна",
+      role: "Пользователь",
+      photo: "/images/marinova.jpg",
+    },
+  ];
 </script>
 
 <style lang="less">
-  .authorization-form {
-    display: flex;
-    flex-direction: column;
-    gap: 21px;
-    border: 3px solid @black;
-    border-radius: 20px;
-    max-width: 507px;
-    height: 471px;
-    margin: calc(50vh - 376px) auto 0;
-    padding: 15px 75px 56px;
-    box-shadow: @shadow_main;
+  .home {
 
-    @media @bw1340 {
-      height: 400px;
-      margin: calc(50vh - 316px) auto 0;
-    }
-
-    @media @bw768 {
-      height: 350px;
-      margin: calc(50vh - 281px) auto 0;
-      padding-bottom: 46px;
-    }
-
-    @media @bw650 {
-      padding: 15px 10% 36px;
-    }
-
-    &__title {
-      margin: 0 0 22px;
-      color: @black;
-      font-weight: 500;
-      font-size: 40px;
-      text-align: center;
-
-      @media @bw1340 {
-        font-size: 30px;
-      }
-
-      @media @bw768 {
-        font-size: 20px;
-      }
-    }
-
-    &__input {
-      .v-field,
-      .v-field__input,
-      .v-input__control {
-        max-height: 58px;
-
-        @media @bw1340 {
-          max-height: 50px;
-        }
-
-        @media @bw768 {
-          max-height: 45px;
-        }
-      }
-
-      .v-field__input,
-      .v-field-label {
-        font-size: 30px;
-
-        @media @bw1340 {
-          font-size: 22px;
-        }
-
-        @media @bw768 {
-          font-size: 14px;
-        }
-      }
-
-      .v-field__overlay {
-        border-radius: 20px 20px 0 0;
-        background-color: @light_blue;
-        box-shadow: @shadow_main;
-        opacity: 1;
-      }
-
-      .v-field-label {
-        color: @gray;
-        font-weight: 500;
-        margin-left: 18px;
-      }
-
-      .v-input__details {
-        padding-top: 0;
-        padding-inline: 18px;
-        max-height: 16px;
-      }
-    }
-
-    &__submit-btn {
-      align-items: flex-start;
-      border-radius: 0 0 20px 20px;
-      min-height: 58px;
-      padding: 9px 6px;
-      background-color: @yellow_green;
-      color: @white;
-      font-size: 22px;
-      letter-spacing: normal;
-      text-transform: none;
-
-      @media @bw1340 {
-        min-height: 50px;
-        font-size: 17px;
-      }
-
-      @media @bw768 {
-        min-height: 45px;
-        font-size: 11px;
-      }
-    }
-
-    .v-input {
-      flex: 0;
-    }
   }
 </style>

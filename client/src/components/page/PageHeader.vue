@@ -168,7 +168,7 @@
       transition: background-color 0.2s;
 
       @media @bw1340 {
-        margin: 0 15px;
+        margin: 0 10px;
         padding: 15px 30px;
       }
 
@@ -193,12 +193,12 @@
 
       @media @bw1660 {
         gap: 26px;
-        margin-left: 70px;
+        margin-left: 63px;
       }
 
       @media @bw1340 {
         gap: 16px;
-        margin-left: 50px;
+        margin-left: 33px;
       }
     }
 
