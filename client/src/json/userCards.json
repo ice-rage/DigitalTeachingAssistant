@@ -1,0 +1,82 @@
+[
+  {
+    "id": "0001",
+    "surname": "Максимов",
+    "name": "Максим",
+    "patronymic": "Максимович",
+    "role": "Администратор",
+    "photo": "/images/users/maksimov.jpg"
+  },
+  {
+    "id": "0002",
+    "surname": "Романов",
+    "name": "Роман",
+    "patronymic": "Романович",
+    "role": "Пользователь",
+    "photo": "/images/users/romanov.jpg"
+  },
+  {
+    "id": "0003",
+    "surname": "Олегов",
+    "name": "Олег",
+    "patronymic": "Олегович",
+    "role": "Пользователь",
+    "photo": "/images/users/olegov.jpg"
+  },
+  {
+    "id": "0004",
+    "surname": "Игорев",
+    "name": "Игорь",
+    "patronymic": "Игоревич",
+    "role": "Администратор",
+    "photo": "/images/users/igorev.jpg"
+  },
+  {
+    "id": "0005",
+    "surname": "Маринова",
+    "name": "Марина",
+    "patronymic": "Игоревна",
+    "role": "Пользователь",
+    "photo": "/images/users/marinova.jpg"
+  },
+  {
+    "id": "0006",
+    "surname": "Дмитриев",
+    "name": "Дмитрий",
+    "patronymic": "Дмитриевич",
+    "role": "Администратор",
+    "photo": "/images/users/dmitriev.jpg"
+  },
+  {
+    "id": "0007",
+    "surname": "Васильева",
+    "name": "Василиса",
+    "patronymic": "Васильевна",
+    "role": "Пользователь",
+    "photo": "/images/users/vasileva.jpg"
+  },
+  {
+    "id": "0008",
+    "surname": "Валерьев",
+    "name": "Валерий",
+    "patronymic": "Валерьевич",
+    "role": "Пользователь",
+    "photo": "/images/users/valeriev.jpg"
+  },
+  {
+    "id": "0009",
+    "surname": "Алинова",
+    "name": "Алина",
+    "patronymic": "Сергеевна",
+    "role": "Администратор",
+    "photo": "/images/users/alinova.jpg"
+  },
+  {
+    "id": "0010",
+    "surname": "Григорьев",
+    "name": "Григорий",
+    "patronymic": "Григорьевич",
+    "role": "Пользователь",
+    "photo": "/images/users/grigoriev.jpg"
+  }
+]

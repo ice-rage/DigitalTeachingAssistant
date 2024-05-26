@@ -6,7 +6,7 @@
 
     <section class="list-template__items">
       <v-card 
-        v-for="item in items"
+        v-for="item in currentItems"
         :key="item.id"
         class="list-template__item"
       >
@@ -30,27 +30,35 @@
         <v-spacer></v-spacer>
 
         <v-card-actions>
-                      <v-btn
-                        class="ms-2"
-                        :icon="mdiSquareEditOutline"
-                        variant="text"
-                      ></v-btn>
-                    </v-card-actions>
+          <v-btn
+            class="ms-2"
+            :icon="mdiSquareEditOutline"
+            variant="text"
+          ></v-btn>
+        </v-card-actions>
       </v-card>
     </section>
 
-    <v-pagination
-      v-model="page"
-      :length="4"
-      rounded="0"
-      class="list-template__pagination"
-    ></v-pagination>
+    <v-row justify="center">
+      <v-col cols="7">
+        <v-container class="max-width">
+          <v-pagination
+            v-model="currentPage"
+            :length="totalPageCount"
+            @update:model-value="updateCurrentPage"
+            class="my-4"
+          ></v-pagination>
+        </v-container>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script setup>
+  import { onMounted } from "vue";
   import { mdiSquareEditOutline } from "@mdi/js";
-  const { title, items } = defineProps({
+
+  const { title, items, } = defineProps({
     title: {
       type: String,
       default: "",
@@ -62,6 +70,27 @@
       required: true,
     },
   });
+
+  const limit = 4;
+  const totalItemCount = items.length;
+  const totalPageCount = Math.ceil(totalItemCount / limit);
+  const currentPage = ref(1);
+  const currentItems = ref();
+
+  onMounted(() => {
+    if (totalItemCount < limit) {
+      currentItems.value = items;
+    } else {
+      currentItems.value = items.slice(0, limit);
+    }
+  });
+
+  const updateCurrentPage = (pageIndex) => {
+		let firstItem = (pageIndex - 1) * limit;
+		let lastItem = pageIndex * limit;
+		currentItems.value = items.slice(firstItem, lastItem);
+		currentPage.value = pageIndex;
+  }
 </script>
 
 <style lang="less">

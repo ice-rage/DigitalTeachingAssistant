@@ -1,0 +1,92 @@
+[
+  {
+    "id": "0001",
+    "surname": "Максимов",
+    "name": "Максим",
+    "patronymic": "Максимович",
+    "department": "Кафедра компьютерных систем в управлении и проектировании (КСУП)",
+    "taskCount": 7,
+    "photo": "/images/teachers/maksimov.jpg"
+  },
+  {
+    "id": "0002",
+    "surname": "Романов",
+    "name": "Роман",
+    "patronymic": "Романович",
+    "department": "Кафедра экономики и математической статистики (ЭМИС)",
+    "taskCount": 10,
+    "photo": "/images/teachers/romanov.jpg"
+  },
+  {
+    "id": "0003",
+    "surname": "Олегов",
+    "name": "Олег",
+    "patronymic": "Олегович",
+    "department": "Кафедра математики",
+    "taskCount": 15,
+    "photo": "/images/teachers/olegov.jpg"
+  },
+  {
+    "id": "0004",
+    "surname": "Игорев",
+    "name": "Игорь",
+    "patronymic": "Игоревич",
+    "department": "Кафедра автоматизированных систем управления (АСУ)",
+    "taskCount": 3,
+    "photo": "/images/teachers/igorev.jpg"
+  },
+  {
+    "id": "0005",
+    "surname": "Маринова",
+    "name": "Марина",
+    "patronymic": "Игоревна",
+    "department": "Кафедра компьютерных систем в управлении и проектировании (КСУП)",
+    "taskCount": 22,
+    "photo": "/images/teachers/marinova.jpg"
+  },
+  {
+    "id": "0006",
+    "surname": "Дмитриев",
+    "name": "Дмитрий",
+    "patronymic": "Дмитриевич",
+    "department": "Кафедра физики",
+    "taskCount": 12,
+    "photo": "/images/teachers/dmitriev.jpg"
+  },
+  {
+    "id": "0007",
+    "surname": "Васильева",
+    "name": "Василиса",
+    "patronymic": "Васильевна",
+    "department": "Кафедра электронных приборов",
+    "taskCount": 5,
+    "photo": "/images/teachers/vasileva.jpg"
+  },
+  {
+    "id": "0008",
+    "surname": "Валерьев",
+    "name": "Валерий",
+    "patronymic": "Валерьевич",
+    "department": "Кафедра экономики",
+    "taskCount": 28,
+    "photo": "/images/teachers/valeriev.jpg"
+  },
+  {
+    "id": "0009",
+    "surname": "Алинова",
+    "name": "Алина",
+    "patronymic": "Сергеевна",
+    "department": "Кафедра автоматизированных систем управления (АСУ)",
+    "taskCount": 19,
+    "photo": "/images/teachers/alinova.jpg"
+  },
+  {
+    "id": "0010",
+    "surname": "Григорьев",
+    "name": "Григорий",
+    "patronymic": "Григорьевич",
+    "department": "Кафедра философии и социологии (ФиС)",
+    "taskCount": 11,
+    "photo": "/images/teachers/grigoriev.jpg"
+  }
+]

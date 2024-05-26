@@ -1,7 +1,7 @@
 <template>
   <v-form 
     class="authorization-form" 
-    @submit.prevent="handleSubmit"
+    @submit.prevent="logIn"
   >
     <h1 class="authorization-form__title">Вход в систему</h1>
 
@@ -49,7 +49,7 @@
     required: value => !!value || "Это поле обязательно",
   };
 
-  const handleSubmit = () => {
+  const logIn = () => {
     // здесь будет запрос к API 
     console.log(form);
   };

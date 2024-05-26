@@ -10,8 +10,8 @@
       </a>
 
       <nav class="page-header__nav">
-        <a href="#" class="page-header__nav-link">Пользователи</a>
-        <a href="#" class="page-header__nav-link">Преподаватели</a>
+        <RouterLink to="/users" class="page-header__nav-link">Пользователи</RouterLink>
+        <RouterLink to="/teachers" class="page-header__nav-link">Преподаватели</RouterLink>
         
         <div class="page-header__nav-user">
           <a href="#" class="page-header__user-btn">
@@ -37,6 +37,7 @@
 
 <script setup>
   import { mdiSchool, mdiAccountCircle, mdiLogout } from "@mdi/js";
+import { RouterLink } from "vue-router";
 </script>
 
 <style lang="less">
@@ -50,7 +51,7 @@
     width: 100%;
     height: 124px;
     background-color: @deep_purple_90;
-    z-index: 100;
+    z-index: 10;
 
     @media @bw1340 {
       height: 100px;
