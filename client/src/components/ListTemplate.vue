@@ -38,6 +38,13 @@
                     </v-card-actions>
       </v-card>
     </section>
+
+    <v-pagination
+      v-model="page"
+      :length="4"
+      rounded="0"
+      class="list-template__pagination"
+    ></v-pagination>
   </div>
 </template>
 
