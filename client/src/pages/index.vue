@@ -1,15 +1,13 @@
 <template>
   <div class="home">
-    <AutorizationForm class="home__authorization-form"/>
+    <AuthorizationForm
+      class="home__authorization-form"
+    />
   </div>
 </template>
 
 <script setup>
-  import AutorizationForm from "@/components/AutorizationForm.vue";
+  import AuthorizationForm from "@/components/AuthorizationForm.vue";
 </script>
 
-<style lang="less">
-  .home {
-
-  }
-</style>
+<style lang="less"></style>

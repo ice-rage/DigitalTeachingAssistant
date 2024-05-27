@@ -1,9 +1,24 @@
-.container() {
+.main-container() {
   box-sizing: border-box;
-  max-width: 1440px;
+  max-width: 1168px;
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
+}
+
+.layout-container {
+  .main-container();
+
+  max-width: 1440px;
+}
+
+.add-btn {
+  border-radius: 40px;
+  min-height: 45px;
+  padding: 6px 95px;
+  background-color: @yellow_green;
+  color: @white;
+  font-size: 22px;
 }
 
 .responsive-parent(@w: 100%; @after-pt) {

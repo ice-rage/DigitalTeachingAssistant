@@ -1,17 +1,28 @@
 <template>
   <header class="page-header">
-    <div class="page-header__container">
-      <a href="/" title="На главную" class="page-header__logo">
+    <v-container class="page-header__container">
+      <RouterLink to="/" title="На главную" class="page-header__logo">
         <v-icon :icon="mdiSchool" class="page-header__logo-icon"/>
 
         <h4 class="page-header__logo-text">
           Цифровой помощник преподавателя
         </h4>
-      </a>
+      </RouterLink>
 
       <nav class="page-header__nav">
-        <RouterLink to="/users" class="page-header__nav-link">Пользователи</RouterLink>
-        <RouterLink to="/teachers" class="page-header__nav-link">Преподаватели</RouterLink>
+        <RouterLink
+          to="/users" 
+          class="page-header__nav-link"
+        >
+          Пользователи
+        </RouterLink>
+
+        <RouterLink
+          to="/teachers" 
+          class="page-header__nav-link"
+        >
+          Преподаватели
+        </RouterLink>
         
         <div class="page-header__nav-user">
           <a href="#" class="page-header__user-btn">
@@ -31,13 +42,13 @@
         
         <v-btn type="button" class="page-header__nav-toggle"></v-btn>
       </nav>
-    </div>
+    </v-container>
   </header>
 </template>
 
 <script setup>
   import { mdiSchool, mdiAccountCircle, mdiLogout } from "@mdi/js";
-import { RouterLink } from "vue-router";
+  import { RouterLink } from "vue-router";
 </script>
 
 <style lang="less">
@@ -62,7 +73,7 @@ import { RouterLink } from "vue-router";
     }
     
     &__container {
-      .container();
+      .layout-container();
 
       position: relative;
       display: flex;
@@ -79,6 +90,7 @@ import { RouterLink } from "vue-router";
       padding-left: 25px;
       background-color: @deep_purple;
       color: @white;
+      box-shadow: @shadow_logo;
 
       @media @bw1340 {
         max-width: 390px;
@@ -132,14 +144,19 @@ import { RouterLink } from "vue-router";
       display: flex;
       align-items: center;
 
+      @media @bw1340 {
+        margin-left: 20px;
+      }
+
       @media @bw1020 {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100vh;
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
+        height: 100vh;
+        margin-left: 0;
         padding: 211px 30px 30px;
         background-color: fade(@deep_purple, 98%);
         transition: transform 0.4s;
@@ -159,9 +176,13 @@ import { RouterLink } from "vue-router";
     }
     
     &__nav-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 13px;
+      width: 250px;
+      height: 68px;
       margin: 0 21px;
-      padding: 19px 49px;
       background-color: @dark_orchid_40;
       color: @white;
       font-family: @font2;
@@ -169,8 +190,10 @@ import { RouterLink } from "vue-router";
       transition: background-color 0.2s;
 
       @media @bw1340 {
+        width: 200px;
+        height: 62px;
         margin: 0 10px;
-        padding: 15px 30px;
+        font-size: 20px;
       }
 
       @media @bw1020 {

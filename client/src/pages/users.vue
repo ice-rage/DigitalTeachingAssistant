@@ -2,14 +2,14 @@
   <div class="user-list">
     <ListTemplate 
       :title="'Пользователи'" 
-      :items="userCards"
-      class="user-list__list-template"
+      :cards="userCards"
+      class="user-list__card-list"
     />
   </div>
 </template>
 
 <script setup>
-  import ListTemplate from "@/components/ListTemplate.vue";
+  import ListTemplate from "@/components/CardList.vue";
   import userCards from "@/json/userCards.json";
 </script>
 

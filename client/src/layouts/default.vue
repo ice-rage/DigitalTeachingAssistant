@@ -2,10 +2,10 @@
   <v-layout class="layout">
     <v-main class="layout__main">
       <PageHeader class="layout__page-header"/>
-
-      <v-container class="layout__container">
+      
+      <div class="layout__container">
         <RouterView class="layout__page-content"/>
-      </v-container>
+      </div>
       
       <PageFooter/>
     </v-main>

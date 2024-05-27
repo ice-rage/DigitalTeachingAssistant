@@ -1,15 +1,15 @@
 <template>
   <div class="teacher-list">
-    <ListTemplate 
+    <CardList
       :title="'Преподаватели'" 
-      :items="teacherCards"
-      class="teacher-list__list-template"
+      :cards="teacherCards"
+      class="teacher-list__card-list"
     />
   </div>
 </template>
 
 <script setup>
-  import ListTemplate from "@/components/ListTemplate.vue";
+  import CardList from "@/components/CardList.vue";
   import teacherCards from "@/json/teacherCards.json";
 </script>
 

@@ -33,8 +33,8 @@
     color: @white;
 
     @media @bw1340 {
+      height: auto;
       padding: 10px 0;
-      height: 100px;
     }
 
     @media @bw450 {
@@ -42,11 +42,17 @@
     }
 
     &__container {
-      .container();
+      .layout-container();
 
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+
+      @media @bw768 {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+      }
     }
 
     &__contacts {

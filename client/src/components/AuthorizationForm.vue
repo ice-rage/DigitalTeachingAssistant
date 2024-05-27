@@ -1,5 +1,6 @@
 <template>
   <v-form 
+    v-model="isFormValid"
     class="authorization-form" 
     @submit.prevent="logIn"
   >
@@ -29,9 +30,10 @@
       :rules="[rules.required]"
       class="authorization-form__input"
     />
-    <v-btn 
+    <v-btn
       type="submit" 
-      variant="flat" 
+      variant="flat"
+      :disabled="!isFormValid"
       class="authorization-form__submit-btn"
     >
       Войти
@@ -40,6 +42,8 @@
 </template>
 
 <script setup>
+  const isFormValid = defineModel({ default: false });
+
   const form = reactive({
     username: "",
     password: "",
@@ -60,27 +64,27 @@
     display: flex;
     flex-direction: column;
     gap: 21px;
-    border: 3px solid @black;
+    border: 3px solid @deep_purple;
     border-radius: 20px;
     max-width: 507px;
-    height: 471px;
-    margin: calc(50vh - 376px) auto 0;
+    margin: calc(50vh - 376px) auto;
     padding: 15px 75px 56px;
     box-shadow: @shadow_main;
 
     @media @bw1340 {
-      height: 400px;
-      margin: calc(50vh - 316px) auto 0;
+      margin: calc(50vh - 316px) auto;
     }
 
     @media @bw768 {
-      height: 350px;
-      margin: calc(50vh - 281px) auto 0;
       padding-bottom: 46px;
     }
 
     @media @bw650 {
       padding: 15px 10% 36px;
+    }
+
+    @media (max-height: 768px) and (min-width: 768px) {
+      margin: 20px auto;
     }
 
     &__title {
@@ -160,12 +164,11 @@
 
       @media @bw1340 {
         min-height: 50px;
-        font-size: 17px;
+        font-size: 16px;
       }
 
       @media @bw768 {
         min-height: 45px;
-        font-size: 11px;
       }
     }
 

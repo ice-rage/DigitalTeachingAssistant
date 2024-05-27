@@ -1,6 +1,5 @@
 [
   {
-    "id": "0001",
     "surname": "Максимов",
     "name": "Максим",
     "patronymic": "Максимович",
@@ -9,7 +8,6 @@
     "photo": "/images/teachers/maksimov.jpg"
   },
   {
-    "id": "0002",
     "surname": "Романов",
     "name": "Роман",
     "patronymic": "Романович",
@@ -18,7 +16,6 @@
     "photo": "/images/teachers/romanov.jpg"
   },
   {
-    "id": "0003",
     "surname": "Олегов",
     "name": "Олег",
     "patronymic": "Олегович",
@@ -27,7 +24,6 @@
     "photo": "/images/teachers/olegov.jpg"
   },
   {
-    "id": "0004",
     "surname": "Игорев",
     "name": "Игорь",
     "patronymic": "Игоревич",
@@ -36,7 +32,6 @@
     "photo": "/images/teachers/igorev.jpg"
   },
   {
-    "id": "0005",
     "surname": "Маринова",
     "name": "Марина",
     "patronymic": "Игоревна",
@@ -45,7 +40,6 @@
     "photo": "/images/teachers/marinova.jpg"
   },
   {
-    "id": "0006",
     "surname": "Дмитриев",
     "name": "Дмитрий",
     "patronymic": "Дмитриевич",
@@ -54,7 +48,6 @@
     "photo": "/images/teachers/dmitriev.jpg"
   },
   {
-    "id": "0007",
     "surname": "Васильева",
     "name": "Василиса",
     "patronymic": "Васильевна",
@@ -63,7 +56,6 @@
     "photo": "/images/teachers/vasileva.jpg"
   },
   {
-    "id": "0008",
     "surname": "Валерьев",
     "name": "Валерий",
     "patronymic": "Валерьевич",
@@ -72,7 +64,6 @@
     "photo": "/images/teachers/valeriev.jpg"
   },
   {
-    "id": "0009",
     "surname": "Алинова",
     "name": "Алина",
     "patronymic": "Сергеевна",
@@ -81,7 +72,6 @@
     "photo": "/images/teachers/alinova.jpg"
   },
   {
-    "id": "0010",
     "surname": "Григорьев",
     "name": "Григорий",
     "patronymic": "Григорьевич",
