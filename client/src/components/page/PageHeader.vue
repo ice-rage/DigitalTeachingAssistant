@@ -25,23 +25,25 @@
         </RouterLink>
         
         <div class="page-header__nav-user">
-          <a href="#" class="page-header__user-btn">
+          <v-btn flat href="#" class="page-header__user-btn">
             <v-icon 
               :icon="mdiAccountCircle" 
               class="page-header__user-icon"
             ></v-icon>
-          </a>
+          </v-btn>
 
-          <a href="#" class="page-header__nav-logout">
+          <v-btn flat href="#" class="page-header__nav-logout">
             <v-icon 
               :icon="mdiLogout" 
               class="page-header__logout-icon">
             </v-icon>
-          </a>
+          </v-btn>
         </div>
-        
-        <v-btn type="button" class="page-header__nav-toggle"></v-btn>
       </nav>
+
+      <div class="page-header__right-block">
+        <v-btn type="button" class="page-header__nav-toggle"></v-btn>
+      </div>
     </v-container>
   </header>
 </template>
@@ -226,21 +228,24 @@
       }
     }
 
-    &__user-btn {
-      display: block;
-      width: 68px;
-      height: 63px;
+    &__user-btn,
+    &__nav-logout {
+      display: flex;
       margin: auto;
+      background: none;
+      color: @white;
       z-index: 1;
+    }
+
+    &__user-btn {
+      width: 68px;
 
       @media @bw1340 {
         width: 58px;
-        height: 53px;
       }
 
       @media @bw768 {
         width: 48px;
-        height: 43px;
       }
     }
 
@@ -261,20 +266,14 @@
     }
 
     &__nav-logout {
-      display: block;
       width: 76px;
-      height: 63px;
-      font-size: 0;
-      z-index: 1;
 
       @media @bw1340 {
         width: 66px;
-        height: 53px;
       }
 
       @media @bw768 {
         width: 56px;
-        height: 43px;
       }
     }
 
@@ -283,46 +282,76 @@
       height: 100%;
     }
 
+    &__right-block {
+      display: none;
+
+      @media @bw1020 {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: auto;
+        margin-left: auto;
+      }
+    }
+
     &__nav-toggle {
       display: none;
 
       @media @bw1020 {
         position: relative;
         display: block;
-        right: -8px;
-        margin-left: 23px;
-        width: 40px;
-        height: 40px;
-        border: none;
+        // right: -8px;
+        // margin-left: 23px;
+        width: 53px;
         background: none;
       }
 
-      @media @bw768 {
-        margin-left: 6px;
-      }
+      // @media @bw768 {
+      //   margin-left: 6px;
+      // }
 
       &::before,
       &::after {
         content: "";
         position: absolute;
         display: block;
-        top: 19px;
-        left: 10px;
-        width: 20px;
-        height: 2px;
+        top: 21px;
+        left: 9px;
+        width: 35px;
+        height: 4px;
         border-radius: 2px;
-        background-color: @deep_purple;
+        background-color: @white;
         transform-origin: 50% 50%;
         transition: transform 0.4s, box-shadow 0.4s;
       }
 
       &::before {
-        top: 13px;
-        box-shadow: 0 6px 0 @deep_purple;
+        top: 15px;
+        box-shadow: 0 10px 0 @white;
       }
 
       &::after {
-        top: 25px;
+        top: 36px;
+        border: none;
+        color: @white;
+        opacity: 1;
+      }
+    }
+
+    .v-btn--size-default {
+      min-width: auto;
+      padding: 0;
+    }
+
+    .v-btn.v-btn--density-default {
+      height: 63px;
+
+      @media @bw1340 {
+        height: 53px;
+      }
+
+      @media @bw768 {
+        height: 43px;
       }
     }
   }
