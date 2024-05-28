@@ -104,7 +104,7 @@
       width: 100%;
       padding: 21px 0;
       background-color: @white;
-      z-index: 10;
+      z-index: 1;
 
       @media @bw1340 {
         top: 100px;

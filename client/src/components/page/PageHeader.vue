@@ -42,7 +42,11 @@
       </nav>
 
       <div class="page-header__right-block">
-        <v-btn type="button" class="page-header__nav-toggle"></v-btn>
+        <v-btn 
+          type="button" 
+          class="page-header__nav-toggle" 
+          @click="isMenuOpened = !isMenuOpened"
+        ></v-btn>
       </div>
     </v-container>
   </header>
@@ -51,6 +55,11 @@
 <script setup>
   import { mdiSchool, mdiAccountCircle, mdiLogout } from "@mdi/js";
   import { RouterLink } from "vue-router";
+  import { watch } from "vue";
+
+  const isMenuOpened = ref(false);
+
+  watch(isMenuOpened, () => document.body.classList.toggle("show-nav"));
 </script>
 
 <style lang="less">
@@ -81,6 +90,10 @@
       display: flex;
       justify-content: space-between;
       padding-left: 0;
+      
+      @media @bw1340 {
+        padding-left: 0;
+      }
     }
     
     &__logo {
@@ -159,7 +172,7 @@
         width: 100%;
         height: 100vh;
         margin-left: 0;
-        padding: 211px 30px 30px;
+        padding: 150px 30px 30px;
         background-color: fade(@deep_purple, 98%);
         transition: transform 0.4s;
         transform: translate(-100%);
@@ -172,8 +185,8 @@
         }
       }
 
-      @media @bw768 {
-        padding: 149px 20px 30px;
+      @media @bw650 {
+        align-items: center;
       }
     }
     
@@ -199,8 +212,13 @@
       }
 
       @media @bw1020 {
-        margin: 0 0 40px;
-        font-size: 16px;
+        width: 250px;
+        height: 68px;
+        margin: 0 0 30px;
+
+        &:last-of-type {
+          margin: 0 0 50px;
+        }
       }
 
       &:hover {
@@ -225,6 +243,11 @@
       @media @bw1340 {
         gap: 16px;
         margin-left: 33px;
+      }
+
+      @media @bw1020 {
+        min-width: 250px;
+        margin-left: 0;
       }
     }
 
@@ -300,15 +323,13 @@
       @media @bw1020 {
         position: relative;
         display: block;
-        // right: -8px;
-        // margin-left: 23px;
         width: 53px;
         background: none;
       }
 
-      // @media @bw768 {
-      //   margin-left: 6px;
-      // }
+      @media @bw768 {
+        width: 43px;
+      }
 
       &::before,
       &::after {
@@ -323,11 +344,22 @@
         background-color: @white;
         transform-origin: 50% 50%;
         transition: transform 0.4s, box-shadow 0.4s;
+
+        @media @bw768 {
+          top: 17px;
+          left: 8px;
+          width: 28px;
+          height: 3px;
+        }
       }
 
       &::before {
         top: 15px;
         box-shadow: 0 10px 0 @white;
+
+        @media @bw768 {
+          top: 12px;
+        }
       }
 
       &::after {
@@ -335,6 +367,10 @@
         border: none;
         color: @white;
         opacity: 1;
+
+        @media @bw768 {
+          top: 32px;
+        }
       }
     }
 
