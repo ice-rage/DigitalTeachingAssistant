@@ -1,0 +1,63 @@
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+
+Base = declarative_base()
+
+class Authorization(Base):
+    __tablename__ = 'authorization'
+
+    id = Column(Integer, primary_key=True)
+    login = Column(String)
+    password = Column(String)
+
+class Profile(Base):
+    __tablename__ = 'profile'
+
+    id = Column(Integer, primary_key=True)
+    last_name = Column(String)
+    first_name = Column(String)
+    patronymic = Column(String)
+    email = Column(String)
+    role = Column(String)
+    description = Column(String)
+    password = Column(String)
+    confirmation_password = Column(String)
+    themes_completed = Column(String)
+    save_button = Column(String)
+
+class Teachers(Base):
+    __tablename__ = 'teachers'
+
+    id = Column(Integer, primary_key=True)
+    teacher_id = Column(Integer, ForeignKey('teacher.id'))
+    detailed_profile = Column(String)
+    assignment = Column(String)
+    answer_form = Column(String)
+
+class Teacher(Base):
+    __tablename__ = 'teacher'
+
+    id = Column(Integer, primary_key=True)
+    full_name = Column(String)
+    photo = Column(String)
+    department = Column(String)
+    available_themes_count = Column(Integer)
+    paginator = Column(String)
+
+    teachers = relationship("Teachers", back_populates="teacher")
+
+CREATE TABLE task_response (
+    response_ID INT PRIMARY KEY,
+    task_ID INT,
+    task_text VARCHAR(255),
+    grade ENUM('плохо', 'удовлетворительно', 'хорошо', 'отлично'),
+    answer_text TEXT,
+    FOREIGN KEY (task_ID) REFERENCES teacher(task_ID)
+);
+
+
+
+# Создаем базу данных
+engine = create_engine('sqlite:///database.db')
+Base.metadata.create_all(engine)
