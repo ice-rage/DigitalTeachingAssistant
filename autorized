@@ -1,0 +1,30 @@
+import sqlite3
+
+# Функция для проверки роли пользователя
+def check_role(email, password):
+    # Подключение к базе данных
+    conn = sqlite3.connect('WORK.db')
+    cursor = conn.cursor()
+
+    # Выполнение SQL-запроса для получения роли пользователя
+    query = "SELECT privileges FROM users WHERE email=? AND password=?"
+    cursor.execute(query, (email, password))
+    result = cursor.fetchone()
+
+    # Закрытие соединения с базой данных
+    cursor.close()
+    conn.close()
+
+    # Проверка результата запроса и вывод роли пользователя
+    if result is not None:
+        role = result[0]
+        print("Доброе пожаловать", role)
+    else:
+        print("Неверные данные пользователя")
+
+# Ввод данных пользователя
+email = input("Введите логин (e-mail): ")
+password = input("Введите пароль: ")
+
+# Проверка роли пользователя
+check_role(email, password)
